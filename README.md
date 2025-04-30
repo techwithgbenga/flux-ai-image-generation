@@ -1,5 +1,5 @@
 # FLUX
-by Black Forest Labs: https://blackforestlabs.ai. Documentation for our API can be found here: [docs.bfl.ml](https://docs.bfl.ml/).
+Documentation for our API can be found here: [docs.bfl.ml](https://docs.bfl.ml/).
 
 ![grid](assets/grid.jpg)
 
@@ -8,8 +8,8 @@ This repo contains minimal inference code to run image generation & editing with
 ## Local installation
 
 ```bash
-cd $HOME && git clone https://github.com/black-forest-labs/flux
-cd $HOME/flux
+cd $HOME && git clone https://github.com/techwithgbenga/flux-ai-image-generation
+cd $HOME/flux-ai-image-generation
 python3.10 -m venv .venv
 source .venv/bin/activate
 pip install -e ".[all]"
@@ -20,10 +20,10 @@ pip install -e ".[all]"
 If you would like to install the repository with [TensorRT](https://github.com/NVIDIA/TensorRT) support, you currently need to install a PyTorch image from NVIDIA instead. First install [enroot](https://github.com/NVIDIA/enroot), next follow the steps below:
 
 ```bash
-cd $HOME && git clone https://github.com/black-forest-labs/flux
+cd $HOME && git clone https://github.com/techwithgbenga/flux-ai-image-generation
 enroot import 'docker://$oauthtoken@nvcr.io#nvidia/pytorch:25.01-py3'
 enroot create -n pti2501 nvidia+pytorch+25.01-py3.sqsh
-enroot start --rw -m ${PWD}/flux:/workspace/flux -r pti2501
+enroot start --rw -m ${PWD}/flux:/workspace/flux-ai-image-generation -r pti2501
 cd flux
 pip install -e ".[tensorrt]" --extra-index-url https://pypi.nvidia.com
 ```
@@ -55,7 +55,7 @@ The weights of the autoencoder are also released under [apache-2.0](https://hugg
 
 ## API usage
 
-Our API offers access to our models. It is documented here:
+Our API offers access to flux models. It is documented here:
 [docs.bfl.ml](https://docs.bfl.ml/).
 
 In this repository we also offer an easy python interface. To use this, you
