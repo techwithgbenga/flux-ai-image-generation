@@ -8,7 +8,7 @@ This repo contains minimal inference code to run image generation & editing with
 ## Local installation
 
 ```bash
-cd $HOME && git clone https://github.com/techwithgbenga/flux-ai-image-generation
+cd $HOME && git clone https://github.com/techwithgbenga/flux_ai_image_generation
 cd $HOME/flux-ai-image-generation
 python3.10 -m venv .venv
 source .venv/bin/activate
@@ -20,7 +20,7 @@ pip install -e ".[all]"
 If you would like to install the repository with [TensorRT](https://github.com/NVIDIA/TensorRT) support, you currently need to install a PyTorch image from NVIDIA instead. First install [enroot](https://github.com/NVIDIA/enroot), next follow the steps below:
 
 ```bash
-cd $HOME && git clone https://github.com/techwithgbenga/flux-ai-image-generation
+cd $HOME && git clone https://github.com/techwithgbenga/flux_ai_image_generation
 enroot import 'docker://$oauthtoken@nvcr.io#nvidia/pytorch:25.01-py3'
 enroot create -n pti2501 nvidia+pytorch+25.01-py3.sqsh
 enroot start --rw -m ${PWD}/flux:/workspace/flux-ai-image-generation -r pti2501
